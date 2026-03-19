@@ -20,7 +20,7 @@ class DieFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = ViewModelProvider(this)[DieViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[DieViewModel::class.java]
 
         arguments?.getInt(DIESIDE)?.let {
             viewModel.setSides(it)
@@ -47,11 +47,6 @@ class DieFragment : Fragment() {
             viewModel.rollDie()
         }
     }
-
-    fun rollDie() {
-       viewModel.rollDie()
-    }
-
 
     companion object{
         fun newInstance(sides:Int)= DieFragment().apply {
