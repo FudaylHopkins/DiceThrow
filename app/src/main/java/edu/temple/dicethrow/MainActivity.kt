@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.rollDiceButton).setOnClickListener {
             supportFragmentManager
                 .findFragmentById(R.id.fragmentContainerView)?.run {
-                    (this as DieFragment).throwDie()
+                    (this as DieFragment).rollDie()
                 }
         }
     }
